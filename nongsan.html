@@ -22,13 +22,14 @@
     /* ==== HEADER ==== */
     header {
       background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0,0,0,0.5)),
-                  url('https://images.pexels.com/photos/533360/pexels-photo-533360.jpeg') no-repeat center/cover;
+              url('https://images.pexels.com/photos/533360/pexels-photo-533360.jpeg') no-repeat center/cover;
       height: 100vh;
       color: white;
       text-align: center;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: center;  /* giữa dọc */
+      align-items: center;      /* giữa ngang */
       padding: 0 20px;
       animation: fadeIn 2s ease-in-out;
     }
@@ -47,17 +48,29 @@
     }
 
     .btn {
-      display: inline-block;
-      padding: 10px 40px;   /* nhỏ hơn so với 14px 28px */
-      background: #ff9800;
-      color: white;
-      text-decoration: none;
-      border-radius: 25px;  /* bo tròn nhẹ hơn */
-      font-size: 1rem;      /* giảm size chữ */
-      font-weight: 600;
-      transition: all 0.3s ease;
-      animation: bounceIn 2s ease;
-    }
+  display: inline-block;
+  padding: 10px 20px;
+  background: #ff9800;
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  animation: bounceIn 2s ease;
+  width: auto;          /* chỉ bằng nội dung */
+  max-width: 200px;     /* giới hạn tối đa */
+  text-align: center;   /* canh giữa text */
+  white-space: nowrap;  /* không xuống dòng */
+}
+
+@media (max-width: 480px) {
+  .btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    max-width: 150px;
+  }
+}
 
     .btn:hover {
       background: #e68900;
